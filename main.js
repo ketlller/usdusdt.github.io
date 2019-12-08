@@ -29,10 +29,11 @@ var livecoinhotbit = document.querySelector('.inputdrub6 span');
 
 
 let proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-    targetUrl_PZM_USD = 'https://btc-alpha.com/api/v1/orderbook/PZM_USD/'; 
-    targetUrl_PZM_USD_Livecoin = 'https://api.livecoin.net/exchange/order_book?currencyPair=PZM/USD'; 
-      targetUrl_PZM_USD_hotbit1 = 'https://api.hotbit.io/api/v1/order.book?market=PZM/USDT&side=1&offset=0&limit=1'; 
-      targetUrl_PZM_USD_hotbit2 = 'https://api.hotbit.io/api/v1/order.book?market=PZM/USDT&side=2&offset=0&limit=1'; 
+targetUrl_PZM_USD = 'https://btc-alpha.com/api/v1/orderbook/USD_USDT/'; 
+    targetUrl_PZM_USD_Livecoin = 'https://api.livecoin.net/exchange/order_book?currencyPair=USDT/USD'; 
+      targetUrl_PZM_USD_hotbit1 = 'https://api.hotbit.io/api/v1/order.book?market=USDT/USD&side=1&offset=0&limit=1'; 
+      targetUrl_PZM_USD_hotbit2 = 'https://api.hotbit.io/api/v1/order.book?market=USDT/USD&side=2&offset=0&limit=1'; 
+
 
 let resUrl1 = proxyUrl + targetUrl_PZM_USD;
 let resUrl2 = proxyUrl + targetUrl_PZM_USD_Livecoin;
