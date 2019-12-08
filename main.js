@@ -116,7 +116,7 @@ livecoinhotbit.innerHTML = (((currentPrice_SellPZM_USD_hotbit*100)/currentPrice_
       res.json().then(body => {  
       
     divBuyPZM_USD_hotbit.innerHTML = body.result.orders[0].price;
-    divBuyPZM_USD_hotbit1.innerHTML = body.result.orders[0].amount;
+    divBuyPZM_USD_hotbit1.innerHTML = body.result.orders[0].left;
      
     currentPrice_BuyPZM_USD_hotbit = body.result.orders[0].price;
      
@@ -136,7 +136,7 @@ livecoinhotbit.innerHTML = (((currentPrice_SellPZM_USD_hotbit*100)/currentPrice_
     .then(res => {
       res.json().then(body => {  
  	 divSellPZM_USD_hotbit.innerHTML = body.result.orders[0].price;
-   divSellPZM_USD_hotbit1.innerHTML = body.result.orders[0].amount;
+   divSellPZM_USD_hotbit1.innerHTML = body.result.orders[0].left;
     
    currentPrice_SellPZM_USD_hotbit = body.result.orders[0].price;
             
