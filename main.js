@@ -69,12 +69,7 @@ var currentPrice_SellCoin_hotbit = null;
       currentPrice_BuyCoin = body.buy[0].price;
       currentPrice_SellCoin = body.sell[0].price;
     
-    btcalphalivecoin.innerHTML = (((100/currentPrice_SellCoin)/currentPrice_SellCoin_livecoin)-100).toFixed(2);
-     btcalphahotbit.innerHTML = (((100/currentPrice_SellCoin)/currentPrice_SellCoin_hotbit)-100).toFixed(2);      
-        
-   livecoinbtcalpha.innerHTML = (((100*currentPrice_BuyCoin_livecoin)*currentPrice_BuyCoin)-100).toFixed(2);
-        
-livecoinhotbit.innerHTML = (((100*currentPrice_BuyCoin_livecoin)/currentPrice_SellCoin_hotbit)-100).toFixed(2);             
+                
       
       console.log(body);
    
@@ -95,16 +90,28 @@ livecoinhotbit.innerHTML = (((100*currentPrice_BuyCoin_livecoin)/currentPrice_Se
     
        currentPrice_BuyCoin_livecoin = body.bids[0][0];
        currentPrice_SellCoin_livecoin = body.asks[0][0];
-    
-  if(currentPrice_SellCoin < currentPrice_BuyCoin_livecoin && $('#btcalphalivecoin_notificator').prop('checked'))beep();
+	     
+   livecoinbtcalpha.innerHTML = (((100*currentPrice_BuyCoin_livecoin)*currentPrice_BuyCoin)-100).toFixed(2);      
+   livecoinhotbit.innerHTML = (((100*currentPrice_BuyCoin_livecoin)/currentPrice_SellCoin_hotbit)-100).toFixed(2);       	      
+   btcalphalivecoin.innerHTML = (((100/currentPrice_SellCoin)/currentPrice_SellCoin_livecoin)-100).toFixed(2);
+     hotbitlivecoin.innerHTML = (((currentPrice_BuyCoin_hotbit*100)/currentPrice_SellCoin_livecoin)-100).toFixed(2); 	      
+     btcalphahotbit.innerHTML = (((100/currentPrice_SellCoin)/currentPrice_SellCoin_hotbit)-100).toFixed(2);      
+   
         
-        
-     if(currentPrice_SellCoin_livecoin < currentPrice_BuyCoin && $('#livecoinbtcalpha_notificator').prop('checked'))beep();   
+
+	      
+	      
+if(currentPrice_SellCoin_livecoin < currentPrice_BuyCoin && $('#livecoinbtcalpha_notificator').prop('checked'))beep();  	      
+if(currentPrice_SellCoin_livecoin < currentPrice_SellCoin_hotbit && $('#livecoinhotbit_notificator').prop('checked'))beep();    
+if(currentPrice_SellCoin < currentPrice_BuyCoin_livecoin && $('#btcalphalivecoin_notificator').prop('checked'))beep();
+if(currentPrice_BuyCoin_hotbit < currentPrice_BuyCoin_livecoin && $('#hotbitlivecoin_notificator').prop('checked'))beep();        
+if(currentPrice_SellCoin < currentPrice_SellCoin_hotbit && $('#btcalphahotbit_notificator').prop('checked'))beep();        
+if(currentPrice_BuyCoin_hotbit < currentPrice_BuyCoin && $('#hotbitbtcalpha_notificator').prop('checked'))beep();      
        
-    if(currentPrice_SellCoin_livecoin < currentPrice_SellCoin_hotbit && $('#livecoinhotbit_notificator').prop('checked'))beep();      
-     if(currentPrice_SellCoin < currentPrice_SellCoin_hotbit && $('#btcalphahotbit_notificator').prop('checked'))beep(); 
-      if(currentPrice_BuyCoin_hotbit < currentPrice_BuyCoin && $('#hotbitbtcalpha_notificator').prop('checked'))beep();    
-     if(currentPrice_BuyCoin_hotbit < currentPrice_BuyCoin_livecoin && $('#hotbitlivecoin_notificator').prop('checked'))beep();
+          
+      
+          
+     
         
      
     console.log(body);
@@ -125,7 +132,7 @@ livecoinhotbit.innerHTML = (((100*currentPrice_BuyCoin_livecoin)/currentPrice_Se
      
         hotbitbtcalpha.innerHTML = (((currentPrice_BuyCoin_hotbit*100)*currentPrice_BuyCoin)-100).toFixed(2); 
         
-        hotbitlivecoin.innerHTML = (((currentPrice_BuyCoin_hotbit*100)/currentPrice_SellCoin_livecoin)-100).toFixed(2); 
+      
       
        
      console.log(body);
