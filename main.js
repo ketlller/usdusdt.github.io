@@ -94,9 +94,9 @@ var currentPrice_SellCoin_hotbit = null;
    livecoinbtcalpha.innerHTML = (((100*currentPrice_BuyCoin_livecoin)*currentPrice_BuyCoin)-100).toFixed(2);      
    livecoinhotbit.innerHTML = (((100*currentPrice_BuyCoin_livecoin)/currentPrice_SellCoin_hotbit)-100).toFixed(2);       	      
    btcalphalivecoin.innerHTML = (((100/currentPrice_SellCoin)/currentPrice_SellCoin_livecoin)-100).toFixed(2);
-     hotbitlivecoin.innerHTML = (((currentPrice_BuyCoin_hotbit*100)/currentPrice_SellCoin_livecoin)-100).toFixed(2); 
 	      
-       btcalphahotbit.innerHTML = (((100/currentPrice_SellCoin)/currentPrice_BuyCoin_hotbit)-100).toFixed(2);      
+     hotbitlivecoin.innerHTML = (((currentPrice_SellCoin_hotbit*100)/currentPrice_SellCoin_livecoin)-100).toFixed(2); 
+     btcalphahotbit.innerHTML = (((100/currentPrice_SellCoin)/currentPrice_BuyCoin_hotbit)-100).toFixed(2);      
    
         
 
