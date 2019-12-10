@@ -130,7 +130,7 @@ if(currentPrice_BuyCoin_hotbit < currentPrice_BuyCoin && $('#hotbitbtcalpha_noti
      
     currentPrice_BuyCoin_hotbit = body.result.orders[0].price;
      
-        hotbitbtcalpha.innerHTML = (((currentPrice_BuyCoin_hotbit*100)*currentPrice_BuyCoin)-100).toFixed(2); 
+         
         
       
       
@@ -149,7 +149,9 @@ if(currentPrice_BuyCoin_hotbit < currentPrice_BuyCoin && $('#hotbitbtcalpha_noti
    divSellCoin_hotbit1.innerHTML = body.result.orders[0].left;
     
    currentPrice_SellCoin_hotbit = body.result.orders[0].price;
-            
+	      
+     hotbitbtcalpha.innerHTML = (((currentPrice_SellCoin_hotbit*100)*currentPrice_BuyCoin)-100).toFixed(2);   
+	      
     console.log(body);
 
     });
