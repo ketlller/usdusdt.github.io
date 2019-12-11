@@ -27,6 +27,13 @@ var hotbitbtcalpha = document.querySelector('.inputdrub4 span');
 var hotbitlivecoin = document.querySelector('.inputdrub5 span');
 var livecoinhotbit = document.querySelector('.inputdrub6 span');
 
+var counter = document.querySelector('#counter');
+var counter1 = document.querySelector('#counter1');
+var counter2 = document.querySelector('#counter2');
+var counter3 = document.querySelector('#counter3');
+var counter4 = document.querySelector('#counter4');
+var counter5 = document.querySelector('#counter5');
+
 
 let proxyUrl = 'https://cors-anywhere.herokuapp.com/',
 targetUrl_Coin = 'https://btc-alpha.com/api/v1/orderbook/USD_USDT/'; 
@@ -42,14 +49,19 @@ let resUrl4 = proxyUrl + targetUrl_Coin_hotbit2;
 
 console.log()
 
- var currentPrice_BuyCoin = null;
- var currentPrice_SellCoin = null;
-  var currentPrice_BuyCoin_livecoin = null;
-  var currentPrice_SellCoin_livecoin = null;
+var currentPrice_BuyCoin = null;
+var currentPrice_SellCoin = null;
+var currentPrice_BuyCoin_livecoin = null;
+var currentPrice_SellCoin_livecoin = null;
 var currentPrice_BuyCoin_hotbit = null;
 var currentPrice_SellCoin_hotbit = null;
 
- 
+var previousPositive = true; 
+var previousPositive1 = true; 
+var previousPositive2 = true; 
+var previousPositive3 = true; 
+var previousPositive4 = true; 
+var previousPositive5 = true; 
 
 
 
@@ -91,25 +103,87 @@ var currentPrice_SellCoin_hotbit = null;
        currentPrice_BuyCoin_livecoin = body.bids[0][0];
        currentPrice_SellCoin_livecoin = body.asks[0][0];
 	     
-   livecoinbtcalpha.innerHTML = (((100*currentPrice_BuyCoin_livecoin)*currentPrice_BuyCoin)-100).toFixed(2);   
-	      
-   livecoinhotbit.innerHTML = (((100*currentPrice_BuyCoin_livecoin)/currentPrice_BuyCoin_hotbit)-100).toFixed(2);  
-	      
-   btcalphalivecoin.innerHTML = (((100/currentPrice_SellCoin)/currentPrice_SellCoin_livecoin)-100).toFixed(2);
-	      
-     hotbitlivecoin.innerHTML = (((currentPrice_SellCoin_hotbit*100)/currentPrice_SellCoin_livecoin)-100).toFixed(2); 
-     btcalphahotbit.innerHTML = (((100/currentPrice_SellCoin)/currentPrice_BuyCoin_hotbit)-100).toFixed(2);      
-   hotbitbtcalpha.innerHTML = (((currentPrice_SellCoin_hotbit*100)*currentPrice_BuyCoin)-100).toFixed(2); 
-        
+   var value = (((100*currentPrice_BuyCoin_livecoin)*currentPrice_BuyCoin)-100).toFixed(2);   
+	 livecoinbtcalpha.innerHTML = value;      
+   var value1 = (((100*currentPrice_BuyCoin_livecoin)/currentPrice_BuyCoin_hotbit)-100).toFixed(2);  
+	 livecoinhotbit.innerHTML = value1;      
+   var value2 = (((100/currentPrice_SellCoin)/currentPrice_SellCoin_livecoin)-100).toFixed(2);
+	 btcalphalivecoin.innerHTML = value2; 
+   var value3 = (((currentPrice_SellCoin_hotbit*100)/currentPrice_SellCoin_livecoin)-100).toFixed(2); 
+	 hotbitlivecoin.innerHTML = value3;     
+   var value4 = (((100/currentPrice_SellCoin)/currentPrice_BuyCoin_hotbit)-100).toFixed(2);
+         btcalphahotbit.innerHTML = value4;  
+   var value5 = (((currentPrice_SellCoin_hotbit*100)*currentPrice_BuyCoin)-100).toFixed(2); 
+         hotbitbtcalpha.innerHTML = value5; 
 
 	      
+	if(value < 0) {
+        if(previousPositive) {
+          counter.innerHTML++;
+          previousPositive = false;
+        }
+      } else {
+        previousPositive = true;
+      }
+        
+        
+        if(value1 < 0) {
+        if(previousPositive1) {
+          counter1.innerHTML++;
+          previousPositive1 = false;
+        }
+      } else {
+        previousPositive1 = true;
+      }
+        
+        if(value2 < 0) {
+        if(previousPositive2) {
+          counter2.innerHTML++;
+          previousPositive2 = false;
+        }
+      } else {
+        previousPositive2 = true;
+      }
+        
+        if(value3 < 0) {
+        if(previousPositive3) {
+          counter3.innerHTML++;
+          previousPositive3 = false;
+        }
+      } else {
+        previousPositive3 = true;
+      }
+        
+        if(value4 < 0) {
+        if(previousPositive4) {
+          counter4.innerHTML++;
+          previousPositive4 = false;
+        }
+      } else {
+        previousPositive4 = true;
+      }
+        
+        if(value5 < 0) {
+        if(previousPositive5) {
+          counter5.innerHTML++;
+          previousPositive5 = false;
+        }
+      } else {
+        previousPositive5 = true;
+      }
+              
 	      
-if(currentPrice_SellCoin_livecoin < currentPrice_BuyCoin && $('#livecoinbtcalpha_notificator').prop('checked'))beep();  	      
-if(currentPrice_SellCoin_livecoin < currentPrice_SellCoin_hotbit && $('#livecoinhotbit_notificator').prop('checked'))beep();    
-if(currentPrice_SellCoin < currentPrice_BuyCoin_livecoin && $('#btcalphalivecoin_notificator').prop('checked'))beep();
-if(currentPrice_BuyCoin_hotbit < currentPrice_BuyCoin_livecoin && $('#hotbitlivecoin_notificator').prop('checked'))beep();        
-if(currentPrice_SellCoin < currentPrice_SellCoin_hotbit && $('#btcalphahotbit_notificator').prop('checked'))beep();        
-if(currentPrice_BuyCoin_hotbit < currentPrice_BuyCoin && $('#hotbitbtcalpha_notificator').prop('checked'))beep();      
+	      
+	      
+	      
+	      
+	      
+if(value > 0 && $('#livecoinbtcalpha_notificator').prop('checked'))beep();  	      
+if(value1 > 0 && $('#livecoinhotbit_notificator').prop('checked'))beep();    
+if(value2 > 0 && $('#btcalphalivecoin_notificator').prop('checked'))beep();
+if(value3 > 0 && $('#hotbitlivecoin_notificator').prop('checked'))beep();        
+if(value4 > 0 && $('#btcalphahotbit_notificator').prop('checked'))beep();        
+if(value5 > 0 && $('#hotbitbtcalpha_notificator').prop('checked'))beep();      
        
           
       
