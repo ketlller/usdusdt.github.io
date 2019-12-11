@@ -117,7 +117,7 @@ var previousPositive5 = true;
          hotbitbtcalpha.innerHTML = value5; 
 
 	      
-	if(value < 0) {
+	if(value > 0) {
         if(previousPositive) {
           counter.innerHTML++;
           previousPositive = false;
@@ -127,7 +127,7 @@ var previousPositive5 = true;
       }
         
         
-        if(value1 < 0) {
+        if(value1 > 0) {
         if(previousPositive1) {
           counter1.innerHTML++;
           previousPositive1 = false;
@@ -136,7 +136,7 @@ var previousPositive5 = true;
         previousPositive1 = true;
       }
         
-        if(value2 < 0) {
+        if(value2 > 0) {
         if(previousPositive2) {
           counter2.innerHTML++;
           previousPositive2 = false;
@@ -145,7 +145,7 @@ var previousPositive5 = true;
         previousPositive2 = true;
       }
         
-        if(value3 < 0) {
+        if(value3 > 0) {
         if(previousPositive3) {
           counter3.innerHTML++;
           previousPositive3 = false;
@@ -154,7 +154,7 @@ var previousPositive5 = true;
         previousPositive3 = true;
       }
         
-        if(value4 < 0) {
+        if(value4 > 0) {
         if(previousPositive4) {
           counter4.innerHTML++;
           previousPositive4 = false;
@@ -163,7 +163,7 @@ var previousPositive5 = true;
         previousPositive4 = true;
       }
         
-        if(value5 < 0) {
+        if(value5 > 0) {
         if(previousPositive5) {
           counter5.innerHTML++;
           previousPositive5 = false;
